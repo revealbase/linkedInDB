@@ -1,1 +1,1 @@
-7z e sample.7z
+7z e sample.zip
