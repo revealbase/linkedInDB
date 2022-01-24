@@ -10,3 +10,4 @@
 "mongoexport" -v --host localhost:27017 -d "linkedin" -c "skills" --out skills.csv  --fields name,id --type csv
 "mongoexport" -v --host localhost:27017 -d "linkedin" -c "testScores" --out testScores.csv  --fields description,score,name,dateOn.month,dateOn.year,id,index --type csv
 "mongoexport" -v --host localhost:27017 -d "linkedin" -c "volunteerExperiences" --out volunteerExperiences.csv  --fields role,dateRange.start.month,dateRange.start.year,companyName,description,companyUrn,index,dateRange.end.year,cause,dateRange.end.month --type csv
+"mongoexport" -v --host localhost:27017 -d "linkedin" -c "step1" --out basics.csv  --fields _id,firstName,lastName,industry.name,headline,summary,geoLocation.geo.country,location.countryCode,publicIdentifier --type csv
