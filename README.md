@@ -9,4 +9,4 @@ Step 3: Run the first query in Mongodb for the intermediary collection "step1" [
 
 Step 4: Create individual collections for each table by running [step2.js](/mongodb_queries/step2.js)
 
-Step 5: Export the tables to csv files by running 
+Step 5: Export the tables to csv files by running [mongoexport.bat](/mongoexport/mongoexport.bat)
