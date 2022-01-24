@@ -86,45 +86,24 @@ db.getCollection("step1").aggregate([
 	{
 		"$unwind": {
 			"path": "$positionGroups",
-			"includeArrayIndex": "indexName",
+			"includeArrayIndex": "index0",
 			"preserveNullAndEmptyArrays": false
 		}
 	},
-	{ "$addFields": { "positionGroups.profilePositionInPositionGroup._id": "$_id" } },
+	{ "$addFields": { "positionGroups.profilePositionInPositionGroup._id": "$_id", "positionGroups.profilePositionInPositionGroup.index0": "$index0" } },
 	{ "$replaceRoot": { "newRoot": "$positionGroups.profilePositionInPositionGroup" } },
 	{
 		"$unwind": {
 			"path": "$elements",
-			"includeArrayIndex": "index",
+			"includeArrayIndex": "index1",
 			"preserveNullAndEmptyArrays": false
 		}
 	},
-	{ "$addFields": { "elements.id": "$_id", "elements.index0": "$index" } },
+	{ "$addFields": { "elements.id": "$_id", "elements.index0": "$index0","elements.index1": "$index1"  } },
 	{ "$replaceRoot": { "newRoot": "$elements" } },
 	{ "$out": "positions" }
 ]);
 db.getCollection("step1").aggregate([
-	{
-		"$unwind": {
-			"path": "$positionGroups",
-			"includeArrayIndex": "indexName",
-			"preserveNullAndEmptyArrays": false
-		}
-	},
-	{ "$addFields": { "positionGroups.profilePositionInPositionGroup._id": "$_id" } },
-	{ "$replaceRoot": { "newRoot": "$positionGroups.profilePositionInPositionGroup" } },
-	{
-		"$unwind": {
-			"path": "$elements",
-			"includeArrayIndex": "index",
-			"preserveNullAndEmptyArrays": false
-		}
-	},
-	{ "$addFields": { "elements.id": "$_id", "elements.index0": "$index" } },
-	{ "$replaceRoot": { "newRoot": "$elements" } },
-	{ "$out": "positions" }
-]);
-b.getCollection("step1").aggregate([
 	{
 		"$unwind": {
 			"path": "$projects",
