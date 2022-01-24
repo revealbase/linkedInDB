@@ -1,5 +1,5 @@
 # linkedInDB
-Instruction for moving from raw LinkedIn data to individual tables to be imported into a relational database.
+Instructions for moving from raw LinkedIn data to individual tables to be imported into a relational database.
 
 Step 1: Unzip the sample JSON file by running [unzip.bat](/mongoimport/unzip.bat)
 
